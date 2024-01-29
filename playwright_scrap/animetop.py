@@ -34,7 +34,7 @@ def scrape_myanimelist():
                 "score": score.text.strip()
             }
 
-            # Write result to a separate JSON file for each row
+            
             with open(f'topanime_data_{i}.json', 'w') as json_file:
                 json.dump(result, json_file, indent=2)
 
