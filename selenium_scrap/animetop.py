@@ -14,7 +14,7 @@ def get_html_content(url):
     driver.quit()
     return html_content
 
-@app.get("/anime-list")
+@app.get("/topanime")
 async def get_anime_list():
     url = 'https://myanimelist.net/topanime.php'
     html_content = get_html_content(url)

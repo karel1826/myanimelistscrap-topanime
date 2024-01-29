@@ -20,12 +20,12 @@ def scrape_myanimelist():
     html_content = get_html_content(url)
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    rows = soup.select('div.pb12 > table > tbody > tr')
+    rows = soup.select('tr')
 
     for i, row in enumerate(rows, start=1):
-        ranking = row.select_one('td.rank.ac > span')
-        title = row.select_one('td.title.al.va-t.word-break > div > div.di-ib.clearfix > h3')
-        score = row.select_one('td.score.ac.fs14 > div > span')
+        ranking = row.select_one('td.rank > span')
+        title = row.select_one('td.title > div > div > h3')
+        score = row.select_one('td.title > div > div > h3')
 
         if ranking and title and score:
             result = {
