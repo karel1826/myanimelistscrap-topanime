@@ -25,7 +25,7 @@ def scrape_myanimelist():
     for i, row in enumerate(rows, start=1):
         ranking = row.select_one('td.rank > span')
         title = row.select_one('td.title > div > div > h3')
-        score = row.select_one('td.title > div > div > h3')
+        score = row.select_one('td.score > div > span')
 
         if ranking and title and score:
             result = {
